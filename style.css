@@ -1,0 +1,31 @@
+body {
+  background-color: linen;
+  background-image: url("card-game.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: maroon;
+  font-size: 40px;
+}
+
+.container {
+  text-align: center;
+}
+
+.card-container{
+  width: 100%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  height: 400px;
+  width: 300px;
+  margin: 0 10px 0 10px;
+  background-color: pink;
+}
+
