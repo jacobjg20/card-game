@@ -7,13 +7,12 @@ const options = {
 };
 
 //Instantiates and starts a copy of the game
-var Game = require('./game')
-var game = new Game();
+var Deck = require('./deck')
+var deck = new Deck();
 
 //Gives constant updates on the game
 function gameState(){
     setTimeout(function () {  
-        console.log(game.cardCount); 
         gameState(); 
     }, 3000 );
 }
