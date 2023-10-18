@@ -12,8 +12,9 @@ var deck = new Deck();
 
 //Gives constant updates on the game
 function gameState(){
-    setTimeout(function () {  git co
+    setTimeout(function () {  
         gameState(); 
+        console.log(deck.cards);
     }, 3000 );
 }
 gameState();
