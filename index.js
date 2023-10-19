@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
+
 const path = require('path');
 const PORT = 7070;
 const options = {
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
   });
 
 //starts server
+
 app.listen(PORT, function(err){
     if (err) console.log("Error in server setup")
     console.log("Server listening on Port", PORT);
@@ -72,6 +74,7 @@ app.get('/card-game.jpg', function(req, res) {
     });
 });
 
+
 app.get('/style.css', function(req, res) {
 
     let fileName = '/style.css';
@@ -89,6 +92,7 @@ app.get('/client-side-script.js', function(req, res) {
 
     let fileName = '/client-side-script.js';
 
+
     res.sendFile(fileName, options, function (err) {
         if (err) {
             throw(err);
@@ -104,4 +108,5 @@ app.get('/client-side-script.js', function(req, res) {
     console.log(req.body.name);
     res.sendStatus(200);
 });
+
 
