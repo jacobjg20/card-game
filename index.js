@@ -8,12 +8,12 @@ const options = {
     root: path.join(__dirname)
 };
 //enables the app to use a tools from bodyParser
-app.use( bodyParser.json() ); //allows the reading of post data
+app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//Instantiates and starts a copy of the game
-var Deck = require('./deck')
-var deck = new Deck();
+//Instantiates and starts table
+var Table = require('./table.js')
+var table = new Table();
 
 //loop for apps inner tick rate
 function gameState(){
@@ -99,9 +99,7 @@ app.get('/client-side-script.js', function(req, res) {
 });
 
 //Post requests
- app.post('/post-test', (req, res) => {
-    console.log('server has been posted');
-    console.log(req.body.name);
-    res.sendStatus(200);
+ app.post('/gameState', (req, res) => {
+    res.send();
 });
 

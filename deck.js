@@ -23,6 +23,10 @@ class Deck {
         }
       }
     }
+
+    getCards(){
+      return this.cards;
+    }
  }
 
  module.exports = Deck;
