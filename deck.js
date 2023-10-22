@@ -15,11 +15,7 @@ class Deck {
       //creates each card for the deck
       for (let i = 0; i < suit.length; i++){
         for(let x = 0; x < cardValue.length; x++){
-          let card = {
-            suit: suit[i],
-            cardValue: cardValue[x]
-          }
-          this.cards.push(card);
+          this.cards.push(suit[i] + ":" + cardValue[x])
         }
       }
     }

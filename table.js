@@ -4,22 +4,31 @@ var deck = new Deck();
 
 class Table{
     constructor(){
-        this.communityCards;
-        this.board;
+        this.communityCards = [];
+        this.turnCount = 0;
+        this.isCheck = false;
         this.deck = deck.getCards();
     }
 
-    getBoard(){
-        return this.board;
+    //return ComminityCards as JSOn
+    getCommunityCards(){
+        this.communityCards.push(this.deck[0]);
+        this.communityCards.push(this.deck[1]);
+        this.communityCards.push(this.deck[2]);
+        return this.communityCards;
     }
-
+  
+    check(){
+     
+    }
+ 
     shuffleCards(){
-        for (var i = this.deck.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = this.deck[i];
-            this.deck[i] = this.deck[j];
-            this.deck[j] = temp;
-        }
+        // for (var i = Object.keys(this.deck).length - 1; i > 0; i--) {
+        //     var j = Math.floor(Math.random() * (i + 1));
+        //     var temp = this.deck[i];
+        //     this.deck[i] = this.deck[j];
+        //     this.deck[j] = temp;
+        // }
     }
 }
 

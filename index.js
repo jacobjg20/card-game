@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
-const PORT = 7070;
+const PORT = 8080;
 const options = {
     root: path.join(__dirname)
 };
@@ -19,7 +19,6 @@ var table = new Table();
 function gameState(){
     setTimeout(function () {  
         gameState(); 
-        console.log('running');
     }, 3000 );
 }
 gameState();
@@ -99,7 +98,19 @@ app.get('/client-side-script.js', function(req, res) {
 });
 
 //Post requests
- app.post('/gameState', (req, res) => {
-    res.send();
+app.post('/gameState', (req, res) => {
+    let communityCards = table.getCommunityCards();
+    res.send(communityCards);
 });
 
+app.post('/shuffle', (req, res)=>{
+    table.shuffleCards();
+    console.log("cards have been shuffled");
+    res.end()
+})
+
+app.post('/check', (req, res)=>{
+    table.check();
+    console.log('recived check');
+    res.end();
+})

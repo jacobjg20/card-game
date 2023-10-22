@@ -9,3 +9,6 @@ Fetch Data must be sent as a JSON string when being communicated over the intere
 
 Make client display the cards that are currently in game
 
+Work on getting the community card data to the html page must transfer as JSON
+
+work on Table class object
