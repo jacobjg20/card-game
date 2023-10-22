@@ -98,19 +98,13 @@ app.get('/client-side-script.js', function(req, res) {
 });
 
 //Post requests
-app.post('/gameState', (req, res) => {
-    let communityCards = table.getCommunityCards();
+app.post('/check', (req, res) => {
+    let communityCards = table.check();
     res.send(communityCards);
 });
 
 app.post('/shuffle', (req, res)=>{
     table.shuffleCards();
-    console.log("cards have been shuffled");
     res.end()
 })
 
-app.post('/check', (req, res)=>{
-    table.check();
-    console.log('recived check');
-    res.end();
-})

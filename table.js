@@ -5,30 +5,37 @@ var deck = new Deck();
 class Table{
     constructor(){
         this.communityCards = [];
+        this.round = 1;
         this.turnCount = 0;
         this.isCheck = false;
         this.deck = deck.getCards();
     }
 
-    //return ComminityCards as JSOn
-    getCommunityCards(){
-        this.communityCards.push(this.deck[0]);
-        this.communityCards.push(this.deck[1]);
-        this.communityCards.push(this.deck[2]);
+    check(){
+        if (this.round == 1){
+            this.communityCards.push(this.deck[0]);
+            this.communityCards.push(this.deck[1]);
+            this.communityCards.push(this.deck[2]);
+            this.round++;
+        } else if (this.round == 2){
+            this.communityCards.push(this.deck[3]);
+            this.round++;
+        } else if (this.round == 3){
+            this.communityCards.push(this.deck[4]);
+            this.round++;
+        }
         return this.communityCards;
     }
-  
-    check(){
-     
-    }
  
+    randomize(a, b) {
+        return Math.random() - 0.5;
+    }
+
+    //shuffles cards and resets the variables for the game
     shuffleCards(){
-        // for (var i = Object.keys(this.deck).length - 1; i > 0; i--) {
-        //     var j = Math.floor(Math.random() * (i + 1));
-        //     var temp = this.deck[i];
-        //     this.deck[i] = this.deck[j];
-        //     this.deck[j] = temp;
-        // }
+        this.round = 1;
+        this.communityCards =[];
+        this.deck.sort(this.randomize);
     }
 }
 

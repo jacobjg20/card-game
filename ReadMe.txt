@@ -11,4 +11,4 @@ Make client display the cards that are currently in game
 
 Work on getting the community card data to the html page must transfer as JSON
 
-work on Table class object
+work on Table class object logic
